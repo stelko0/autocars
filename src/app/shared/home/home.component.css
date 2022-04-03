@@ -1,0 +1,14 @@
+main{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main div {
+  margin-top: 1.5%;
+}
+
+main div .text{
+  background-color: #655197;
+  padding: 5px 15px;
+  color: #FFF;
+}

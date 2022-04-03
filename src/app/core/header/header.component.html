@@ -1,0 +1,27 @@
+<header>
+  <nav>
+    <h1>AutoCars</h1>
+    <ul class="guest">
+      <li>
+        <a routerLink="/home">Home</a>
+      </li>
+      <li>
+        <a routerLink="/about">About</a>
+      </li>
+      <li>
+        <a routerLink="/contacts">Contacts</a>
+      </li>
+    </ul>
+    <ul class="user">
+      <li *ngIf="!auth.isLoggedIn">
+        <a routerLink="/login">Login</a>
+      </li>
+      <li *ngIf="!auth.isLoggedIn">
+        <a routerLink="/register">Register</a>
+      </li>
+      <li *ngIf="auth.isLoggedIn">
+        <a (click)="auth.logout">Logout</a>
+      </li>
+    </ul>
+  </nav>
+</header>

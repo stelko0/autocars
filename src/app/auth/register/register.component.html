@@ -1,0 +1,17 @@
+<div class="form">
+  <fieldset>
+  <div class="container">
+    <h1>Register Form</h1>
+    <label for="email">Email:</label>
+    <input type="text" #email name="email"/>
+    <label for="password">Password:</label>
+    <input type="password" #password name="password">
+    <label for="username">Repeat password:</label>
+    <input type="password" #repass name="repass">
+    <p>You already have a registration? <a href="/login">Sign in</a></p>
+    <div class="center">
+      <input type="submit" (click)="app.onSignup(email.value, password.value, repass.value)" value="Register">
+    </div>
+  </div>
+  </fieldset>
+</div>

@@ -1,0 +1,15 @@
+  <div class="form">
+    <fieldset>
+    <div class="container">
+      <h1>Login Form</h1>
+      <label for="email">Email:</label>
+      <input type="text" #email name="email">
+      <label for="username">Password:</label>
+      <input type="password" #password name="password">
+      <p>Don't have an account? <a href="/register">Sign up</a></p>
+      <div class="center">
+        <button (click)="auth.signin(email.value, password.value)">Login</button>
+      </div>
+    </div>
+    </fieldset>
+  </div>

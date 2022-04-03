@@ -1,0 +1,20 @@
+footer{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: #655197;
+  height: auto;
+  padding-top: 20px;
+  color: #fff;
+  text-align: center;
+}
+footer h1{
+  font-family: "Roboto", sans-serif;
+  font-size: 30px;
+  font-weight: 900;
+}
+footer p {
+  font-size: 18px;
+  font-weight: 500;
+}
