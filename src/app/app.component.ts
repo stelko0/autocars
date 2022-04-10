@@ -18,13 +18,13 @@ export class AppComponent implements OnInit {
     await this.firebaseService.signup(email, password, repass);
     if (password == repass) {
       if (this.firebaseService.isLoggedIn) this.isSignedIn = true;
-      this.router.navigate(['/home']);
+      // this.router.navigate(['/home']);
     } 
   }
   async onSignin(email: string, password: string) {
     await this.firebaseService.signin(email, password);
       if (this.firebaseService.isLoggedIn) this.isSignedIn = true;
-      this.router.navigate(['/home']);  
+      // this.router.navigate(['/home']);  
 
   }
   handleLogout() {

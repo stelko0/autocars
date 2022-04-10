@@ -1,7 +1,6 @@
-import { Router } from '@angular/router';
 import { AppComponent } from 'src/app/app.component';
 import { FirebaseService } from './../../services/firebase.service';
-import { Component, OnInit, Injectable } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +11,7 @@ export class LoginComponent implements OnInit {
   email: string = '';
   password: string = '';
 
-  constructor(public auth: FirebaseService, public app: AppComponent, public router: Router) {}
+  constructor(public auth: FirebaseService, public app: AppComponent) {}
 
   ngOnInit(): void {
   }

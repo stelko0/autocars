@@ -11,6 +11,9 @@
       <li>
         <a routerLink="/contacts">Contacts</a>
       </li>
+       <li *ngIf="auth.isLoggedIn">
+        <a routerLink="/add-car">Add new car</a>
+      </li>
     </ul>
     <ul class="user">
       <li *ngIf="!auth.isLoggedIn">
@@ -20,7 +23,7 @@
         <a routerLink="/register">Register</a>
       </li>
       <li *ngIf="auth.isLoggedIn">
-        <a (click)="auth.logout">Logout</a>
+        <a routerLink="/logout" (click)="auth.logout()">Logout</a>
       </li>
     </ul>
   </nav>

@@ -10,7 +10,7 @@
     <input type="password" #repass name="repass">
     <p>You already have a registration? <a href="/login">Sign in</a></p>
     <div class="center">
-      <input type="submit" (click)="app.onSignup(email.value, password.value, repass.value)" value="Register">
+      <button (click)="app.onSignup(email.value, password.value, repass.value)">Register</button>
     </div>
   </div>
   </fieldset>

@@ -1,30 +1,34 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-import { AngularFireModule } from '@angular/fire/compat';
 
 import { FooterComponent } from './core/footer/footer.component';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './core/header/header.component';
 import { FirebaseService } from './services/firebase.service';
 
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { environment } from '../environments/environment';
+import { FeatureModule } from './feature/feature.module';
+
 @NgModule({
   declarations: [AppComponent, HeaderComponent, FooterComponent],
   imports: [
+    FormsModule,
+    ReactiveFormsModule,
     BrowserModule,
     RouterModule.forRoot([]),
     HttpClientModule,
     AppRoutingModule,
-    AngularFireModule.initializeApp({
-      apiKey: 'AIzaSyCv91-L5tZhGbQMdF3qIBm-DWl5SCkS4LI',
-      authDomain: 'autocars-b8a71.firebaseapp.com',
-      projectId: 'autocars-b8a71',
-      storageBucket: 'autocars-b8a71.appspot.com',
-      messagingSenderId: '681345138045',
-      appId: '1:681345138045:web:c53bfddb703466f936e014',
-    }),
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
+    AngularFirestoreModule,
+    FeatureModule,
   ],
   providers: [FirebaseService],
   bootstrap: [AppComponent, HeaderComponent, FooterComponent],

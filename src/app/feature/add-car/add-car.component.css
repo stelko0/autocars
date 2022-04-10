@@ -9,7 +9,7 @@
 .container {
   display: flex;
   width: 490px;
-  height: 500px;
+  height: 540px;
   flex-direction: column;
   padding: 15px 25px;
   border-radius: 12px;
@@ -20,7 +20,6 @@
   text-align: center;
   font-size: 40px;
   font-family: "Patua One", cursive;
-  margin: 40px 0;
 }
 
 .container label {

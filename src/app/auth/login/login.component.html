@@ -1,15 +1,30 @@
-  <div class="form">
-    <fieldset>
-    <div class="container">
-      <h1>Login Form</h1>
-      <label for="email">Email:</label>
-      <input type="text" #email name="email">
-      <label for="username">Password:</label>
-      <input type="password" #password name="password">
-      <p>Don't have an account? <a href="/register">Sign up</a></p>
-      <div class="center">
-        <button (click)="auth.signin(email.value, password.value)">Login</button>
+<!-- <form (ngSubmit)="app.onSignin(email.value, password.value); $event.preventDefault()" >
+  <fieldset>
+      <div class="container">
+        <h1>Login Form</h1>
+        <label for="email">Email:</label>
+        <input type="text" #email name="email">
+        <label for="username">Password:</label>
+        <input type="password" #password name="password">
+        <p>Don't have an account? <a href="/register">Sign up</a></p>
+        <div class="center">
+          <input type="submit" value="Login">
+        </div>
       </div>
-    </div>
-    </fieldset>
-  </div>
+      </fieldset>
+</form>     -->
+<div class="form">
+  <fieldset>
+      <div class="container">
+        <h1>Login Form</h1>
+        <label for="email">Email:</label>
+        <input type="text" #email name="email">
+        <label for="username">Password:</label>
+        <input type="password" #password name="password">
+        <p>Don't have an account? <a href="/register">Sign up</a></p>
+        <div class="center">
+          <button (click)="app.onSignin(email.value, password.value)">Login</button>
+        </div>
+      </div>
+      </fieldset>
+</div>
