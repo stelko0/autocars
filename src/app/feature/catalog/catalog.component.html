@@ -1,0 +1,12 @@
+<div *ngIf="cars">
+    <ul>
+      <li *ngFor="let car of cars">
+        <h2> {{car.brand}}</h2>
+        <p>Model: {{car.model }}</p>
+        <p>Millage: {{ car.millage }} km</p>
+        <p>Price: ${{ car.price }}</p>
+        <a [routerLink]="['/details', car.carId]" >Details</a>
+      </li>
+    </ul>
+  
+</div>

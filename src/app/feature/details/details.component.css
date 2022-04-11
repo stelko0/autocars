@@ -1,0 +1,37 @@
+.conatainer{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.details{
+  padding-top: 7%;
+  padding-right: 60%;
+}
+
+.details p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 25px;
+}
+
+.buttons{
+  display: flex;
+  flex-direction: column;
+  padding-right: 64%;
+}
+
+.buttons a {
+  text-decoration: none;
+  background-color: #655197;
+  color: #fff;
+  padding: 0.45rem 1rem;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  letter-spacing: 2px;
+  margin-top: 5%;
+  border-bottom-right-radius: 13px;
+  border-top-left-radius: 13px;
+
+}

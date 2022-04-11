@@ -1,15 +1,39 @@
 <div class="form">
   <fieldset>
     <form class="container" [formGroup]="carFormGroup" (ngSubmit)="addCar()">
+      
       <h1>Add Car</h1>
       <label>Brand:</label>
-      <input type="text" id="brand" formControlName="brand" />
+      <input type="text" id="brand" formControlName="brand" name="brand"/>
+      <ng-container *ngIf="carFormGroup.controls['brand'].touched && carFormGroup.controls['brand'].invalid">
+        <p stlye="color: red">
+          Brand is required!
+        </p>
+      </ng-container>
       <label>Model:</label>
       <input type="text" id="model" formControlName="model" />
+      <ng-container *ngIf="carFormGroup.controls['model'].touched && carFormGroup.controls['model'].invalid">
+        <p stlye="color: red">
+          Model is required!
+        </p>
+      </ng-container>
       <label>Milages:</label>
       <input type="number" id="millage" formControlName="millage" />
+      <ng-container *ngIf="carFormGroup.controls['millage'].touched && carFormGroup.controls['millage'].invalid">
+        <p stlye="color: red">
+          Millage is required!
+        </p>
+      </ng-container>
       <label>Price:</label>
       <input type="number" id="price" formControlName="price" />
+      <ng-container *ngIf="carFormGroup.controls['price'].touched && carFormGroup.controls['price'].invalid">
+        <p>
+          Price is required!
+        </p>
+        <p *ngIf="carFormGroup.value.price < 0">
+          Price must be positive!
+        </p>
+      </ng-container>
       <div class="center">
         <button>Publish</button>
       </div>

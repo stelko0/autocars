@@ -1,3 +1,4 @@
+import { CatalogComponent } from './feature/catalog/catalog.component';
 import { ContactsComponent } from './shared/contacts/contacts.component';
 import { AboutComponent } from './shared/about/about.component';
 import { LoginComponent } from './auth/login/login.component';
@@ -7,6 +8,10 @@ import { HomeComponent } from './shared/home/home.component';
 import { AddCarComponent } from './feature/add-car/add-car.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
+import { ProfileGuard } from './profile.guard';
+import { DetailsComponent } from './feature/details/details.component';
+import { EditComponent } from './feature/edit/edit.component';
+import { DeleteComponent } from './feature/delete/delete.component';
 
 const routes: Routes = [
   {
@@ -21,11 +26,11 @@ const routes: Routes = [
   },
   {
     path: 'about',
-    component: AboutComponent 
+    component: AboutComponent,
   },
   {
     path: 'contacts',
-    component: ContactsComponent
+    component: ContactsComponent,
   },
   // Auth
   {
@@ -38,9 +43,28 @@ const routes: Routes = [
   },
   // Car
   {
+    path: 'catalog',
+    component: CatalogComponent,
+  },
+  {
+    path: 'details/:id',
+    component: DetailsComponent,
+  },
+  {
+    path: 'edit/:id',
+    component: EditComponent,
+    canActivate: [ProfileGuard],
+  },
+  {
+    path: 'delete/:id',
+    component: DeleteComponent,
+    canActivate: [ProfileGuard],
+  },
+  {
     path: 'add-car',
-    component: AddCarComponent
-  }
+    component: AddCarComponent,
+    canActivate: [ProfileGuard],
+  },
 ];
 
 export const AppRoutingModule = RouterModule.forRoot(routes);

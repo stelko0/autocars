@@ -5,14 +5,13 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: 'AIzaSyCv91-L5tZhGbQMdF3qIBm-DWl5SCkS4LI',
-    authDomain: 'autocars-b8a71.firebaseapp.com',
-    databaseURL:
-      'https://autocars-b8a71-default-rtdb.europe-west1.firebasedatabase.app',
-    projectId: 'autocars-b8a71',
-    storageBucket: 'autocars-b8a71.appspot.com',
-    messagingSenderId: '681345138045',
-    appId: '1:681345138045:web:c53bfddb703466f936e014',
+    apiKey: "AIzaSyCv91-L5tZhGbQMdF3qIBm-DWl5SCkS4LI",
+  authDomain: "autocars-b8a71.firebaseapp.com",
+  databaseURL: "https://autocars-b8a71-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "autocars-b8a71",
+  storageBucket: "autocars-b8a71.appspot.com",
+  messagingSenderId: "681345138045",
+  appId: "1:681345138045:web:c53bfddb703466f936e014"
   },
 };
 

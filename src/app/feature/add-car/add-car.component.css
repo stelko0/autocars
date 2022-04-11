@@ -4,12 +4,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 120px 0px;
+  padding: 70px 0px;
 }
 .container {
   display: flex;
   width: 490px;
-  height: 540px;
+  height: 580px;
   flex-direction: column;
   padding: 15px 25px;
   border-radius: 12px;
@@ -82,4 +82,13 @@
   color: rgb(117, 33, 138);
   font-weight: 800;
   text-transform: uppercase;
+}
+
+.error{
+  color: red;
+  margin: 0;
+}
+
+p{
+  margin: 0;
 }

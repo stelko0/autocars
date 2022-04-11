@@ -1,0 +1,10 @@
+[ ] - fix login and register template (form)
+[ ] - modify design 
+    [ ] - catalog
+    [ ] - details
+    [ ] - detete
+    [ ] - home
+    [ ] - about
+    [ ] - contacts
+
+[ ] - add description foreach car

@@ -1,0 +1,18 @@
+<ng-container *ngIf="car">
+  <div class="conatainer">
+    <h1>Detail Page</h1>
+    <div class="details">
+      <p>Brand: {{ car.brand }}</p>
+      <p>Model: {{ car.model }}</p>
+      <p>Millage: {{ car.millage }}</p>
+      <p>Price: ${{ car.price }}</p>
+    </div>
+
+    <ng-container *ngIf="isOwner == true">
+      <div class="buttons">
+        <a [routerLink]="['/edit', car.carId]">Edit</a>
+        <a [routerLink]="['/delete', car.carId]">Delete</a>
+      </div>
+    </ng-container>
+  </div>
+</ng-container>

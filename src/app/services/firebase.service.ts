@@ -5,7 +5,7 @@ import { AngularFireAuth } from "@angular/fire/compat/auth";
   providedIn: 'root',
 })
 export class FirebaseService {
-  isLoggedIn: boolean = true;
+  isLoggedIn: boolean = false;
   passError: boolean = true; // trqbvashe da raboti ama ne uspqh da go napravq sorry ;*
   constructor(public firebaseAuth: AngularFireAuth, public router: Router) {}
 
@@ -36,6 +36,7 @@ export class FirebaseService {
   logout() {
     this.firebaseAuth.signOut();
     localStorage.removeItem('user');
+    // localStorage.clear();
     console.log('LOGOUT');
 
     this.router.navigate(['/home']).then(() => {
