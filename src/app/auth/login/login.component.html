@@ -1,30 +1,25 @@
-<!-- <form (ngSubmit)="app.onSignin(email.value, password.value); $event.preventDefault()" >
+<form [formGroup]="loginForm" (ngSubmit)="login()">
   <fieldset>
       <div class="container">
         <h1>Login Form</h1>
         <label for="email">Email:</label>
-        <input type="text" #email name="email">
+        <input type="text" #email formControlName="email" name="email">
+        <ng-container *ngIf="loginForm.controls['email'].touched && loginForm.controls['email'].invalid">
+        <p stlye="color: red">
+          Email is required!
+        </p>
+      </ng-container>
         <label for="username">Password:</label>
-        <input type="password" #password name="password">
+        <input type="password" #password formControlName="password" name="password">
+        <ng-container *ngIf="loginForm.controls['password'].touched && loginForm.controls['password'].invalid">
+        <p stlye="color: red">
+          Password is required!
+        </p>
+      </ng-container>
         <p>Don't have an account? <a href="/register">Sign up</a></p>
         <div class="center">
-          <input type="submit" value="Login">
+          <button>Login</button>
         </div>
       </div>
       </fieldset>
-</form>     -->
-<div class="form">
-  <fieldset>
-      <div class="container">
-        <h1>Login Form</h1>
-        <label for="email">Email:</label>
-        <input type="text" #email name="email">
-        <label for="username">Password:</label>
-        <input type="password" #password name="password">
-        <p>Don't have an account? <a href="/register">Sign up</a></p>
-        <div class="center">
-          <button (click)="app.onSignin(email.value, password.value)">Login</button>
-        </div>
-      </div>
-      </fieldset>
-</div>
+    </form>

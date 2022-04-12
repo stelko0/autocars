@@ -1,1 +1,13 @@
-<a href="" (click)="deleteCar()">Delete</a>
+<ng-container *ngIf="car">
+  <div class="large-container">
+    <div class="container">
+      <h1>Are you sure you want to delete this car?</h1>
+      <h2>Brand: {{ car.brand }}</h2>
+      <h2>Model: {{ car.model }}</h2>
+      <h2>Millage: {{ car.millage }} km</h2>
+      <h2>Price: ${{ car.price }}</h2>
+      <h2>Description: {{ car.description }}</h2>
+      <a href="#!" (click)="deleteCar()">Delete</a>
+    </div>
+  </div>
+</ng-container>

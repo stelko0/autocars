@@ -34,6 +34,13 @@
           Price must be positive!
         </p>
       </ng-container>
+      <label>Description:</label>
+      <textarea formControlName="description" id="description" cols="25" rows="10"></textarea>
+      <ng-container *ngIf="carFormGroup.controls['description'].touched && carFormGroup.controls['description'].invalid">
+        <p>
+          Description is required!
+        </p>
+      </ng-container>
       <div class="center">
         <button>Publish</button>
       </div>

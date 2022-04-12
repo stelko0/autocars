@@ -19,13 +19,15 @@
       </li>
     </ul>
     <ul class="user">
-      <li *ngIf="!auth.isLoggedIn">
-        <a routerLink="/login">Login</a>
-      </li>
-      <li *ngIf="!auth.isLoggedIn">
-        <a routerLink="/register">Register</a>
-      </li>
-      <li *ngIf="auth.isLoggedIn">
+      <ng-container *ngIf="isLogged == undefined">
+        <li>
+          <a routerLink="/login">Login</a>
+        </li>
+        <li>
+          <a routerLink="/register">Register</a>
+        </li>
+      </ng-container>
+      <li *ngIf="isLogged == false">
         <a routerLink="/logout" (click)="auth.logout()">Logout</a>
       </li>
     </ul>

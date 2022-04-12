@@ -15,6 +15,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { environment } from '../environments/environment';
 import { FeatureModule } from './feature/feature.module';
+import { AuthModule } from './auth/auth.module';
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent, FooterComponent],
@@ -29,6 +30,7 @@ import { FeatureModule } from './feature/feature.module';
     AngularFireDatabaseModule,
     AngularFirestoreModule,
     FeatureModule,
+    AuthModule,
   ],
   providers: [FirebaseService],
   bootstrap: [AppComponent, HeaderComponent, FooterComponent],

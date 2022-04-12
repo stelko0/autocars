@@ -31,6 +31,8 @@ export class EditComponent implements OnInit {
     let model = (<HTMLInputElement>document.getElementById('model')).value;
     let millage = (<HTMLInputElement>document.getElementById('millage')).value;
     let price = (<HTMLInputElement>document.getElementById('price')).value;
+    let description = (<HTMLInputElement>document.getElementById('description')).value;
+
     const db = getDatabase();
 
     set(ref(db, 'cars/' + this.id), {
@@ -40,6 +42,7 @@ export class EditComponent implements OnInit {
       price: price,
       carId: this.car.carId,
       user: this.car.user,
+      description: description
     });
     this.router.navigate(['catalog']);
   }

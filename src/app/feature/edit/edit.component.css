@@ -4,12 +4,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 90px 0px;
+  padding: 60px 0px;
 }
 .container {
   display: flex;
   width: 490px;
-  height: 580px;
+  height: 620px;
   flex-direction: column;
   padding: 15px 25px;
   border-radius: 12px;
@@ -28,7 +28,7 @@
   font-family: "Patua One", cursive;
 }
 
-.container input {
+.container input, textarea {
   outline: none;
   height: 45px;
   padding: 5px 10px;

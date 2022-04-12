@@ -33,5 +33,9 @@
   margin-top: 5%;
   border-bottom-right-radius: 13px;
   border-top-left-radius: 13px;
+}
 
+.buttons a:hover{
+  background-color: #513d7c;
+  transition: 0.5s;
 }

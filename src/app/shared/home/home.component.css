@@ -2,13 +2,18 @@ main{
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 2% 6% 3% 6%;
 }
 main div {
-  margin-top: 1.5%;
+  width: 100%;
 }
 
 main div .text{
   background-color: #655197;
   padding: 5px 15px;
   color: #FFF;
+}
+
+main div .text a {
+  text-decoration: none;
 }

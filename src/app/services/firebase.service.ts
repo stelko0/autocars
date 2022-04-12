@@ -7,6 +7,14 @@ import { AngularFireAuth } from "@angular/fire/compat/auth";
 export class FirebaseService {
   isLoggedIn: boolean = false;
   passError: boolean = true; // trqbvashe da raboti ama ne uspqh da go napravq sorry ;*
+  public getUser(): any {
+    const user = window.localStorage.getItem('user');
+    if (user) {
+      return JSON.parse(user);
+    } else {
+      return {};
+    }
+  }
   constructor(public firebaseAuth: AngularFireAuth, public router: Router) {}
 
   async signin(email: string, password: string) {

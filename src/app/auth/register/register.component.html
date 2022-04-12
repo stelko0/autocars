@@ -1,17 +1,35 @@
-<div class="form">
+<form [formGroup]="registerForm" (ngSubmit)="register()">
   <fieldset>
-  <div class="container">
-    <h1>Register Form</h1>
-    <label for="email">Email:</label>
-    <input type="text" #email name="email"/>
-    <label for="password">Password:</label>
-    <input type="password" #password name="password">
-    <label for="username">Repeat password:</label>
-    <input type="password" #repass name="repass">
+      <div class="container">
+        <h1>Login Form</h1>
+        <label for="email">Email:</label>
+        <input type="text" #email formControlName="email" name="email">
+        <ng-container *ngIf="registerForm.controls['email'].touched && registerForm.controls['email'].invalid">
+        <p stlye="color: red">
+          Email is required!
+        </p>
+      </ng-container>
+        <label for="username">Password:</label>
+        <input type="password" #password formControlName="password" name="password">
+        <ng-container *ngIf="registerForm.controls['password'].touched && registerForm.controls['password'].invalid">
+        <p stlye="color: red">
+          Password is required!
+        </p>
+      </ng-container>
+        <label for="username">Repeat password:</label>
+      <input type="password" #rePassword formControlName="rePassword" name="rePassword">
+        <ng-container>
+        <p stlye="color: red" *ngIf="registerForm.controls['rePassword'].touched && registerForm.controls['rePassword'].invalid">
+          Password is required!
+        </p>
+        <p stlye="color: red" *ngIf="password.value != rePassword.value && rePassword.value.length > 0">
+          Passwords don't match!
+        </p>
+        
+      </ng-container>
     <p>You already have a registration? <a href="/login">Sign in</a></p>
     <div class="center">
-      <button (click)="app.onSignup(email.value, password.value, repass.value)">Register</button>
+      <button>Register</button>
     </div>
   </div>
   </fieldset>
-</div>
