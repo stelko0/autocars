@@ -9,7 +9,7 @@ import firebase from 'firebase/compat/app';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  public count: any[] = [];
+  public count: any;
   constructor() {}
 
   ngOnInit(): void {
@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit {
       .ref('/cars')
       .once('value')
       .then((snapshot) => {
-        this.count = snapshot.val() || 0
+        this.count = Object.keys(snapshot.val()).length;
         
         
       });

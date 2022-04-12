@@ -13,6 +13,6 @@ export class HeaderComponent implements OnInit {
     return this.auth.getUser().isAnonymous;
   }
   ngOnInit(): void {
-    console.log(this.isLogged);
+    // console.log(this.isLogged);
   }
 }

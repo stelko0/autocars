@@ -21,7 +21,7 @@ export class EditComponent implements OnInit {
       if (snapshot.exists()) {
         this.car = snapshot.val();
       } else {
-        console.log('No data available');
+        // console.log('No data available');
       }
     });
   }

@@ -32,7 +32,7 @@ export class DetailsComponent implements OnInit {
             this.isOwner = false;
           }
         } else {
-          console.log('No data available');
+          // console.log('No data available');
         }
       })
       

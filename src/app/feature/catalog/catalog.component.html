@@ -1,4 +1,4 @@
-<div *ngIf="cars">
+<div *ngIf="emptyBase == false">
     <ul>
       <li *ngFor="let car of cars">
         <h2> {{car.brand}}</h2>
@@ -8,5 +8,9 @@
         <a [routerLink]="['/details', car.carId]" >Details</a>
       </li>
     </ul>
-  
+</div>
+<div *ngIf="emptyBase == true">
+  <h1>
+No cars in database!
+  </h1>
 </div>

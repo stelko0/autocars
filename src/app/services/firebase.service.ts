@@ -44,8 +44,8 @@ export class FirebaseService {
   logout() {
     this.firebaseAuth.signOut();
     localStorage.removeItem('user');
-    // localStorage.clear();
-    console.log('LOGOUT');
+    localStorage.clear();
+    // console.log('LOGOUT');
 
     this.router.navigate(['/home']).then(() => {
       window.location.reload();

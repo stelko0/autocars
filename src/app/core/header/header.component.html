@@ -11,7 +11,7 @@
       <li>
         <a routerLink="/contacts">Contacts</a>
       </li>
-       <li *ngIf="auth.isLoggedIn">
+       <li *ngIf="isLogged == false">
         <a routerLink="/add-car">Add new car</a>
       </li>
       <li>

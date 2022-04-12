@@ -10,6 +10,7 @@ import  firebase  from 'firebase/compat/app';
 export class CatalogComponent implements OnInit {
   public cars: any;
   public carId: any;
+  public emptyBase: any
   constructor() {}
 
   ngOnInit(): void {
@@ -18,10 +19,14 @@ export class CatalogComponent implements OnInit {
       .ref('/cars')
       .once('value')
       .then((snapshot) => {
-        this.cars = Object.values(snapshot.val());
-      });
+        if (snapshot.val() == null) {
+          this.emptyBase = true;
+        } else {
+          this.emptyBase = false;
+          this.cars = Object.values(snapshot.val());
+        }
 
-      
+      });
   }
 
   // getData() {
