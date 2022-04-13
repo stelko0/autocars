@@ -5,28 +5,28 @@
       <h1>Add Car</h1>
       <label>Brand:</label>
       <input type="text" id="brand" formControlName="brand" name="brand"/>
-      <ng-container *ngIf="carFormGroup.controls['brand'].touched && carFormGroup.controls['brand'].invalid">
+      <ng-container *ngIf="carFormGroup.controls['brand'].touched && carFormGroup.controls['brand'].invalid" required>
         <p stlye="color: red">
           Brand is required!
         </p>
       </ng-container>
       <label>Model:</label>
       <input type="text" id="model" formControlName="model" />
-      <ng-container *ngIf="carFormGroup.controls['model'].touched && carFormGroup.controls['model'].invalid">
+      <ng-container *ngIf="carFormGroup.controls['model'].touched && carFormGroup.controls['model'].invalid" required>
         <p stlye="color: red">
           Model is required!
         </p>
       </ng-container>
       <label>Milages:</label>
-      <input type="number" id="millage" formControlName="millage" />
-      <ng-container *ngIf="carFormGroup.controls['millage'].touched && carFormGroup.controls['millage'].invalid">
+      <input type="number" id="millage" formControlName="millage" required/>
+      <ng-container *ngIf="carFormGroup.controls['millage'].touched && carFormGroup.controls['millage'].invalid" required>
         <p stlye="color: red">
           Millage is required!
         </p>
       </ng-container>
       <label>Price:</label>
       <input type="number" id="price" formControlName="price" />
-      <ng-container *ngIf="carFormGroup.controls['price'].touched && carFormGroup.controls['price'].invalid">
+      <ng-container *ngIf="carFormGroup.controls['price'].touched && carFormGroup.controls['price'].invalid" required>
         <p>
           Price is required!
         </p>
@@ -35,7 +35,7 @@
         </p>
       </ng-container>
       <label>Description:</label>
-      <textarea formControlName="description" id="description" cols="25" rows="10"></textarea>
+      <textarea formControlName="description" id="description" cols="25" rows="10" required></textarea>
       <ng-container *ngIf="carFormGroup.controls['description'].touched && carFormGroup.controls['description'].invalid">
         <p>
           Description is required!

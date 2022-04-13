@@ -18,12 +18,12 @@ import { getDatabase,ref, set } from 'firebase/database';
 })
 export class AddCarComponent implements OnInit {
   carFormGroup: FormGroup = this.formBuilder.group({
-    brand: new FormControl(null, [Validators.required]),
-    model: new FormControl(null, [Validators.required]),
-    millage: new FormControl('', [Validators.required, Validators.min(0)]),
-    price: new FormControl('', [Validators.required, Validators.min(0)]),
-    description: new FormControl(null, [
-      Validators.required,
+    brand: new FormControl("", [Validators.required, Validators.minLength(1)]),
+    model: new FormControl("", [Validators.required, Validators.minLength(1)]),
+    millage: new FormControl('', [Validators.required, Validators.min(1)]),
+    price: new FormControl('', [Validators.required, Validators.min(1)]),
+    description: new FormControl("", [
+      Validators.required, Validators.minLength(1)
     ]),
   });
 
@@ -32,9 +32,18 @@ export class AddCarComponent implements OnInit {
   ngOnInit(): void {}
 
   addCar(): void {
-    const carId = `${Math.floor(Math.random() * 10000)}-${Math.floor(
-      Math.random() * 10000
-    )}`;
+    if (
+      this.carFormGroup.value.brand.length < 2 ||
+      this.carFormGroup.value.model.length < 2 ||
+      this.carFormGroup.value.millage.length < 2 ||
+      this.carFormGroup.value.price.length < 2 ||
+      this.carFormGroup.value.description.length < 2
+    ) {
+      return;
+    } else {
+      const carId = `${Math.floor(Math.random() * 10000)}-${Math.floor(
+        Math.random() * 10000
+      )}`;
     const db = getDatabase();
     const user = JSON.parse(localStorage.getItem('user')!);
 
@@ -48,5 +57,6 @@ export class AddCarComponent implements OnInit {
       description: this.carFormGroup.value.description
     });
     this.router.navigate(['home']);
+    }
   }
 }

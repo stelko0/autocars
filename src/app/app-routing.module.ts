@@ -12,6 +12,7 @@ import { ProfileGuard } from './profile.guard';
 import { DetailsComponent } from './feature/details/details.component';
 import { EditComponent } from './feature/edit/edit.component';
 import { DeleteComponent } from './feature/delete/delete.component';
+import { NotFoundComponent } from './core/not-found/not-found.component';
 
 const routes: Routes = [
   {
@@ -65,6 +66,11 @@ const routes: Routes = [
     component: AddCarComponent,
     canActivate: [ProfileGuard],
   },
+  // Error 404
+  {
+    path: '**',
+    component: NotFoundComponent
+  }
 ];
 
 export const AppRoutingModule = RouterModule.forRoot(routes);
